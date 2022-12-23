@@ -1,0 +1,73 @@
+﻿@model IEnumerable<MVCWeatherApp.Models.WeatherForeCastViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="container h-50" style="background-color:cornflowerblue">
+
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-8 col-lg-6 col-xl-4">
+
+                <h5 class="mb-3 pb-a2 pt-2">Check the weather</h5>
+                @using (@Html.BeginForm("Index","Home",FormMethod.Post))
+                {
+                    <div class="input-group rounded mb-3">
+                        <input ref={city} type="search" class="form-control rounded" placeholder="City" aria-label="Search" name="city" id="city"
+                               aria-describedby="search-addon" />
+                        <button class="btn btn-primary" type="submit">Check</button>
+                    </div>
+                }
+
+
+                <div class="mb-4 pb-2">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                               value="option1" />
+                        <label class="form-check-label">Celsius</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                               value="option2" />
+                        <label class="form-check-label">Farenheit</label>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            @foreach (var forecast in Model)
+            {
+            <div class="col-md-auto  p-3 pb-5">
+                <div class="card">
+                    <div class="card-body">
+
+                        <h5 class="mb-1 sfw-normal">@forecast.City</h5>
+                        <p class="mb-2"><strong>@forecast.Date.ToShortDateString()</strong></p>
+                        <p>Feels like: <strong>@forecast.Summary</strong></p>
+                        <p>Max: <strong>@forecast.TemperatureMaxC</strong>, Min: <strong>@forecast.TemperatureMinC</strong></p>
+
+                        <div class="d-flex flex-row align-items-center">
+                            <p class="mb-0 me-4">Scattered Clouds</p>
+                            <i class="fas fa-cloud fa-3x"></i>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+
+
+    </div>
+
+
+@{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+}
+

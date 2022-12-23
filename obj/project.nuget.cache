@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Eut4Bq/XJK8cC6znohrUuHoxzhCejWq4XnTG/DNFwkUm2yEGbE/tkbsoS7XDx1jxqBn8O97EOPl3b7BScF5mow==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\renukakn\\source\\repos\\MVCWeatherApp\\MVCWeatherApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\renukakn\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.0\\microsoft.visualstudio.azure.containers.tools.targets.1.17.0.nupkg.sha512"
+  ],
+  "logs": []
+}
